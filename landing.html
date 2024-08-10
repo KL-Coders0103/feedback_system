@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P R POTE College of Engineering Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional CSS to center the heading */
+        h1 {
+            text-align: center;
+        }
+
+        /* Basic styling for subjects list */
+        .subjects {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .subjects li {
+            margin-bottom: 10px;
+        }
+        
+        .subjects ul {
+            padding: 0;
+            margin: 0;
+        }
+
+        .subjects ul ul {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SUPRIYA UMALE</h1>
+            <h2>Feedback Form</h2>
+        </div>
+        <form onsubmit="SEND(event)">
+            <h1>YOUR SUBJECTS</h1>
+            <div class="subjects">
+                <ul>
+                    <li>PHYSICS</li>
+                    <li>CHEMISTRY</li>
+                    <li>MATHEMATICS 1</li>
+                    <li>COMPUTER PROGRAMMING</li>
+                    <li>ENGINEERING MECHANICS</li>
+                </ul>
+            </div>
+            <button type="submit">START FEEDBACK</button>
+        </form>
+    </div>
+
+    <script>
+        function SEND(event) {
+            event.preventDefault(); // Prevent form submission
+            try {
+                // Debugging statement
+                console.log("Redirecting to question.html");
+                window.location.href = "file:///C:/Users/USER/Desktop/QUESTIONIG%20PAGE/qustion.HTML"; // Ensure correct path and filename
+
+            } catch (error) {
+                console.error("Redirection failed:", error);
+            }
+        }
+    </script>
+</body>
+</html>

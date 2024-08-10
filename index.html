@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P R POTE College of Engineering Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style for hiding and showing the section */
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: block;
+            transition: opacity 0.5s ease;
+            opacity: 1;
+        }
+
+        .hide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>P R POTE College of Engineering</h1>
+            <h2>Feedback Form</h2>
+        </div>
+        <form onsubmit="redirect(event)">
+            <label for="branch">Branch:</label>
+            <select id="branch" name="branch" required onchange="toggleSection()">
+                <option value="" disabled selected>Select your branch</option>
+                <option value="cse">Computer Science Engineering</option>
+                <option value="ece">Electronics and Communication Engineering</option>
+                <option value="mech">Mechanical Engineering</option>
+                <option value="civil">Civil Engineering</option>
+                <option value="extc">Electronics and Telecommunication Engineering</option>
+            </select>
+            
+            <label for="Semester">Semester:</label>
+            <select id="Semester" name="Semester" required>
+                <option value="" disabled selected>Select your Semester</option>
+                <option value="first">First Semester</option>
+                <option value="second">Second Semester</option>
+                <option value="third">Third Semester</option>
+                <option value="fourth">Fourth Semester</option>
+                <option value="fifth">Fifth Semester</option>
+                <option value="sixth">Sixth Semester</option>
+                <option value="seventh">Seventh Semester</option>
+                <option value="eighth">Eighth Semester</option>
+            </select>
+
+            <div id="sectionContainer" class="hidden">
+                <label for="section">Section:</label>
+                <select id="section" name="section">
+                    <option value="" disabled selected>Select your section</option>
+                    <option value="a">A</option>
+                    <option value="b">B</option>
+                    <option value="c">C</option>
+                </select>
+            </div>
+            
+            <label for="rollNumber">Enter your roll number:</label>
+            <input type="text" id="rollNumber" name="rollNumber" placeholder="Roll Number" required>
+                        
+            <button type="submit">Next</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to redirect to landing.html when the form is submitted
+        function redirect(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = "http://127.0.0.1:5500/landing.html";
+        }
+
+        // Function to toggle the visibility of the section dropdown
+        function toggleSection() {
+            const branchSelect = document.getElementById('branch');
+            const sectionContainer = document.getElementById('sectionContainer');
+            const rollNumberInput = document.getElementById('rollNumber');
+
+            // Update the roll number placeholder based on selected branch
+            const branchPrefixes = {
+                cse: "CSEU",
+                ece: "ECSU",
+                mech: "MECHU",
+                civil: "CIVILEU",
+                extc: "EXTCU"
+            };
+
+            rollNumberInput.placeholder = `Enter your roll no as ${branchPrefixes[branchSelect.value]}1234`;
+
+            // Toggle section visibility based on selected branch
+            if (branchSelect.value === 'cse') {
+                sectionContainer.classList.remove('hidden');
+                sectionContainer.classList.add('show');
+                sectionContainer.classList.remove('hide');
+            } else {
+                sectionContainer.classList.add('hide');
+                sectionContainer.classList.remove('show');
+                setTimeout(() => {
+                    sectionContainer.classList.add('hidden');
+                }, 500); // Match this duration with the transition time
+            }
+        }
+    </script>
+   
+    <script src="indexjs.js"></script>
+</body>
+</html>

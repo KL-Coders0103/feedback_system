@@ -1,0 +1,97 @@
+body {
+    font-family: 'Times New Roman', serif;
+    background-color: #f8f4f2; /* Light background color without image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.form-container {
+    background-color: rgba(248, 244, 242, 0.849);
+    padding: 30px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 1200px;
+    max-height: 600px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+    overflow-x: auto;
+}
+
+h1, h2, h3 {
+    color: #a23c19f2;
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+h1 {
+    color: #f6480ee7;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.questions-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.question-group {
+    flex: 0 0 48%;
+    min-height: 150px;
+    text-align: left;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #6B3E26;
+    font-weight: 500;
+    font-size: 25px; /* Adjusted for better readability */
+    
+}
+
+.radio-group {
+    display: flex;
+    justify-content: end;
+    margin-top: 15px; /* Reduced margin */
+}
+
+.radio-group label {
+    font-family: cursive;
+    margin-right: 5px; /* Reduced margin between radio buttons and labels */
+    font-size: 20px; /* Adjusted font size */
+    
+}
+
+input[type="radio"] {
+    margin-right: 5px; /* Reduced margin for better alignment with labels */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #FF7B00;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #FF8D21;
+}
+
+button:active {
+    background-color: #FFA652;
+    transform: scale(0.98);
+}
+form{
+    border: 5px;
+}
